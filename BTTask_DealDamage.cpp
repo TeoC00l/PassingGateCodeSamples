@@ -24,11 +24,7 @@ EBTNodeResult::Type UBTTask_DealDamage::ExecuteTask(UBehaviorTreeComponent& Owne
 
 	if(HealthComp)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("%s"), *TargetActor->GetName());
-		UE_LOG(LogTemp, Warning, TEXT("%f"), AbilityStats->GetDamage());
-
 		HealthComp->OnTakeDamage.Broadcast(AbilityStats);
-		UE_LOG(LogTemp, Warning, TEXT("%f"), HealthComp->Health);
 	}
 	
 	return EBTNodeResult::Succeeded;
